@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate.ejs") %>
+  <div class="row">
+    <div class="col-8 offset-2">
+
+      <body>
+        <h3 style="
+          padding-bottom: 0.75rem;
+          padding-top: 0.75rem;
+          font-size: 1.35rem;
+          color: #ff385c
+        ">Edit your Listing</h3>
+        <form method="post" action="/listings/<%= listing.id %>?_method=PUT" enctype="multipart/form-data" novalidate class="needs-validation">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" value="<%= listing.title %>" required type="text" class="form-control">
+            <div class="invalid-feedback">Please enter a valid title</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" required class="form-control"><%= listing.description %></textarea>
+            <div class="invalid-feedback">Please enter a short description</div>
+          </div>
+
+                    
+          <div class="mb-3">
+            <p style="font-size: 14px;">Original Image</p>
+            <img 
+            style="height: 100px; width: 100px;"
+            src="<%= listing.image.url %>">
+          </div>
+
+
+          <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input name="listing[image]" type="file" class="form-control">
+          </div>
+
+
+          <div class="row">
+            <div class="mb-3 col-md-4">
+              <label for="price" class="form-label ">Price</label>
+              <input name="listing[price]" value=<%=listing.price %> required type="number" class="form-control">
+              <div class="invalid-feedback">Please enter a valid price</div>
+            </div>
+
+            <div class="mb-3 col-md-8">
+              <label for="country" class="form-label">Country</label>
+              <input type="text" value="<%= listing.country %>" required name="listing[country]" class="form-control">
+              <div class="invalid-feedback">Please enter a valid country</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-tags"></i></span>
+              <select name="listing[category]" id="category" class="form-select" required>
+                <option value="" disabled <%= !listing.category ? 'selected' : '' %>>Select category</option>
+                <option value="Beach" <%= listing.category==='Beach' ? 'selected' : '' %>>Beach</option>
+                <option value="City" <%= listing.category==='City' ? 'selected' : '' %>>City</option>
+                <option value="Mountain" <%= listing.category==='Mountain' ? 'selected' : '' %>>Mountain</option>
+                <option value="Lake" <%= listing.category==='Lake' ? 'selected' : '' %>>Lake</option>
+                <option value="Ski" <%= listing.category==='Ski' ? 'selected' : '' %>>Ski</option>
+                <option value="Desert" <%= listing.category==='Desert' ? 'selected' : '' %>>Desert</option>
+                <option value="Cabin" <%= listing.category==='Cabin' ? 'selected' : '' %>>Cabin</option>
+                <option value="Villa" <%= listing.category==='Villa' ? 'selected' : '' %>>Villa</option>
+              </select>
+            </div>
+            <div class="form-text">Choose the type of place</div>
+            <div class="invalid-feedback">Please select a category</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" value="<%= listing.location %>" name="listing[location]" class="form-control">
+            <div class="invalid-feedback">Please enter a valid location</div>
+          </div>
+
+          <button class="btn btn-dark mb-3 form-label done-btn">Done!</button>
+        </form>
+      </body>
+    </div>
+  </div>

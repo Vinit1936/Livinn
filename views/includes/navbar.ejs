@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/styles.css">
+<nav class="navbar navbar-expand-md navbar-light bg-body-light border-bottom sticky-top ">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <img class="logo-img"
+        src="https://res.cloudinary.com/dkpj18y1s/image/upload/v1761217416/livinn-high-resolution-logo-transparent_gbqjuk.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+<style>
+  .btn-search{
+    background-color: #ff385c;
+    color: white;
+    border-radius: 30px;
+    font-size: small;
+  }
+
+    .btn-search:hover{
+    background-color: #ff385c;
+    color: white;
+  }
+
+  .btn-search i{
+    display: inline;
+    margin-right: 0.25rem;
+  }
+
+  .search-inp{
+    border-radius: 30px;
+    font-size: small;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
+</style>
+      <!-- seaarch -->
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" aria-label="Search" />
+          <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Become a host</a>
+        <% if(!currentUser){ %>
+          <a class="nav-link" href="/signup">Sign up</a>
+          <a class="nav-link" aria-current="page" href="/login">Login</a>
+          <% } %>
+
+            <% if(currentUser){ %>
+              <a class="nav-link" href="/logout">Logout</a>
+              <% } %>
+
+
+      </div>
+    </div>
+  </div>
+</nav>

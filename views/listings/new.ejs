@@ -1,0 +1,77 @@
+<%layout("/layouts/boilerplate.ejs")%>
+<div class="row">
+  <div class="col-8 offset-2">
+    <body>
+      <h3
+        style="
+          padding-bottom: 0.75rem;
+          padding-top: 0.75rem;
+          font-size: 1.35rem;
+          color: #ff385c
+        "
+      >
+        Create a new Listing
+      </h3>
+      <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]" placeholder="Enter Title" type="text" class="form-control" required/>
+          <div class="invalid-feedback">Please enter a valid title</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" class="form-control" required></textarea>
+          <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input name="listing[image]" type="file" class="form-control" />
+          required
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label ">Price</label>
+            <input name="listing[price]" required placeholder="Enter Price"  class="form-control" />
+            <div class="invalid-feedback">Please enter a valid price</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" required placeholder="India" name="listing[country]" class="form-control" />
+            <div class="invalid-feedback">Please enter a valid country</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-tags"></i></span>
+            <select name="listing[category]" id="category" class="form-select" required>
+              <option value="" disabled selected>Select category</option>
+              <option value="Beach">Beach</option>
+              <option value="City">City</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Lake">Lake</option>
+              <option value="Ski">Ski</option>
+              <option value="Desert">Desert</option>
+              <option value="Cabin">Cabin</option>
+              <option value="Villa">Villa</option>
+            </select>
+          </div>
+          <div class="form-text">Choose the type of place</div>
+          <div class="invalid-feedback">Please select a category</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" required placeholder="Pune, Maharashtra" name="listing[location]" class="form-control" />
+          <div class="invalid-feedback">Please enter a valid location</div>
+        </div>
+
+        <button class="btn btn-dark mb-3 form-label add-btn">Add</button>
+      </form>
+    </body>
+  </div>
+</div>
