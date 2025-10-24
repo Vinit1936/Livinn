@@ -1,8 +1,4 @@
 <link rel="stylesheet" href="/css/styles.css">
-<% 
-  const linkedinUrl = process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/your-username';
-  const xUrl = process.env.X_URL || 'https://x.com/your-handle';
-%>
 <footer>
     <div class="f-info">
         <div class="copyright">
@@ -12,16 +8,24 @@
             <a href="/terms">Terms</a>
             <a href="/terms">Company Details</a>
         </div>
+        
         </div>
-        <div class="f-info-socials">
-            <a href="<%= https://www.linkedin.com/in/vinitpatil19/ %>" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="<%= https://x.com/VinitPatil193 %>" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)">
-              <i class="fa-brands fa-square-x-twitter"></i>
-            </a>
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-        </div>
+       <div class="f-info-socials">
+    <i class="fa-brands fa-linkedin" data-link="https://www.linkedin.com/in/vinitpatil19/"></i>
+    <i class="fa-brands fa-square-x-twitter" data-link="https://x.com/VinitPatil193"></i>
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-square-instagram"></i>
+</div>
     </div>
- </footer>
+</footer>
+
+<script>
+    const icons = document.querySelectorAll(".f-info-socials i");
+
+    icons.forEach(icon => {
+        icon.addEventListener("click", () => {
+            const url = icon.dataset.link;
+            window.open(url, "_blank"); 
+        });
+    });
+</script>
