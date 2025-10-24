@@ -1,4 +1,8 @@
 <link rel="stylesheet" href="/css/styles.css">
+<% 
+  const linkedinUrl = process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/your-username';
+  const xUrl = process.env.X_URL || 'https://x.com/your-handle';
+%>
 <footer>
     <div class="f-info">
         <div class="copyright">
@@ -10,10 +14,14 @@
         </div>
         </div>
         <div class="f-info-socials">
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-square-x-twitter"></i>
+            <a href="<%= https://www.linkedin.com/in/vinitpatil19/ %>" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="<%= https://x.com/VinitPatil193 %>" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)">
+              <i class="fa-brands fa-square-x-twitter"></i>
+            </a>
             <i class="fa-brands fa-square-facebook"></i>
             <i class="fa-brands fa-square-instagram"></i>
         </div>
     </div>
-</footer>
+ </footer>
