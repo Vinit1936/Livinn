@@ -42,7 +42,6 @@ The goal was to build a real-world full-stack app using Node.js, Express, MongoD
 ## Live Demo & Repo
 
 - **Live Website:** [https://livinn.onrender.com/listings](https://livinn.onrender.com/listings)  
-- **GitHub Repository:** [https://github.com/Vinit1936/Livinn](https://github.com/Vinit1936/Livinn)  
 
 ---
 
