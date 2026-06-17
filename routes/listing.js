@@ -42,6 +42,9 @@ router.route("/:id")
 .put(isLoggedIn, isOwner,upload.single("listing[image]"), validateListing, wrapAsync(update))//update route
 .delete(isLoggedIn, isOwner, wrapAsync(deleteListing));//delete route
 
+
+
+
 //Edit Route
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(edit));
 
